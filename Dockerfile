@@ -19,7 +19,7 @@ RUN apk --update --virtual build-deps add icu-dev $PHPIZE_DEPS \
     libtool
 
 RUN docker-php-ext-configure intl \
-    && docker-php-ext-install intl gd zip soap xml exif pcntl
+    && docker-php-ext-install intl gd zip soap xml exif pcntl opcache
 
 RUN pecl install imagick \
     && docker-php-ext-enable imagick \
